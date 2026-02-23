@@ -8,29 +8,65 @@ html {
     }
 }
 
+:root {
+    --primary: #ff5a3d;
+    --primary-dark: #d83f24;
+    --secondary: #0f2a43;
+    --accent: #ffd166;
+    --surface: #fff8f5;
+    --text-main: #222222;
+}
+
 html {
     position: relative;
     min-height: 100%;
 }
-/*
+
 body {
-  margin-bottom: 60px;
-}*/
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    background: linear-gradient(180deg, #fffdfc 0%, var(--surface) 100%);
+}
+
 .text-pink {
-    color: #ff1448 !important;
+    color: var(--primary) !important;
+}
+
+.app-navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
 }
 
 .nav-link {
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-dark) !important;
 }
 
 #carouselExampleSlidesOnly {
     height: auto;
+    border-radius: 14px;
+    overflow: hidden;
 }
 
-footer {
-    background-color: #0d243d;
-    height: 230px;
+.home-hero {
+    background-color: #ffffff;
+    border: 1px solid #ffe3da;
+}
+
+.feature-chip {
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.app-footer {
+    background-color: var(--secondary);
+    min-height: 230px;
 }
 
 header {
@@ -38,7 +74,14 @@ header {
 }
 
 .dishCard {
-    height: 270px;
+    min-height: 270px;
+    border: 1px solid #ffe3da;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dishCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(15, 42, 67, 0.14) !important;
 }
 
 .fa-instagram {
@@ -61,27 +104,27 @@ header {
     top: 5rem;
 }
 
-    #recipe-list ul::-webkit-scrollbar {
-        width: 10px;
-    }
+#recipe-list ul::-webkit-scrollbar {
+    width: 10px;
+}
 
-    #recipe-list ul::-webkit-scrollbar-track {
-        background-color: #ffffff;
-    }
+#recipe-list ul::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
 
-    #recipe-list ul::-webkit-scrollbar-thumb {
-        background-color: #ff1448;
-        border-radius: 10px;
-    }
-
-.recipe-item:hover {
-    background-color: #0d243d;
+#recipe-list ul::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
     border-radius: 10px;
 }
 
-    .recipe-item:hover a {
-        color: #ffffff !important;
-    }
+.recipe-item:hover {
+    background-color: var(--secondary);
+    border-radius: 10px;
+}
+
+.recipe-item:hover a {
+    color: #ffffff !important;
+}
 
 #order-img {
     height: 230px;
@@ -92,9 +135,9 @@ header {
     border: none;
 }
 
-    #qty:focus {
-        outline: none;
-    }
+#qty:focus {
+    outline: none;
+}
 
 .qty-selection {
     -webkit-user-select: none;
@@ -102,25 +145,37 @@ header {
     user-select: none;
 }
 
-.fa-plus, .fa-minus {
+.fa-plus,
+.fa-minus {
     cursor: pointer;
 }
 
-#totalAmount, #price {
+#totalAmount,
+#price {
     width: 60px;
     border: none;
 }
 
-    #totalAmount:focus, #price:focus {
-        outline: none;
-    }
+#totalAmount:focus,
+#price:focus {
+    outline: none;
+}
 
 .addToCartIcon {
     cursor: pointer;
 }
 
 .text-black {
-    background-color: #0d243d;
+    background-color: var(--secondary);
+}
+
+.btn-app-order {
+    background-color: var(--primary);
+    color: #fff !important;
+}
+
+.btn-app-order:hover {
+    background-color: var(--primary-dark);
 }
 
 #showCartList {
@@ -154,6 +209,7 @@ header {
 .emptyCart {
     font-size: 300px;
 }
-.removecartBTN{
-    cursor:pointer;
+
+.removecartBTN {
+    cursor: pointer;
 }
